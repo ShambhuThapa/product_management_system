@@ -1,0 +1,35 @@
+$primary:#0e4f8b;
+$secondary:#909090;
+$success:#34A853;
+$info:#6396D0;
+$warning:yellow;
+$danger:#D20000;
+$light:#F4F0F0;
+$dark:#000000;
+$white:#ffffff;
+
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+$spacer:1rem;
+$border-width:0.0625rem;
+$headings-margin-bottom:      $spacer * .6;
+$headings-font-family:        Inter;
+$headings-font-style:         null;
+$headings-font-weight:        800;
+$headings-line-height:        normal;
+$headings-color:              $primary;
+
+
+$hr-margin-y:                 $spacer;
+$hr-color:                    $primary;
+$hr-height:                   $border-width;
+$hr-opacity:                  .25;

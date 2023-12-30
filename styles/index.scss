@@ -1,0 +1,77 @@
+@import "./var";
+@import "./mixin";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+  );
+
+  $position-values: (
+  0: 0,
+  45:45%,
+  50: 50%,
+  100: 100%
+);
+
+$spacer:2rem;
+$headings-margin-bottom:      $spacer * .5;
+$headings-font-family:        null;
+$headings-font-style:         null;
+$headings-font-weight:        500;
+$headings-line-height:        1.2;
+$headings-color:              null;
+
+$dropdown-link-color:$dark;
+$dropdown-link-hover-color:$primary;
+$dropdown-link-hover-bg:$info;
+$dropdown-link-active-bg:$info;
+
+
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$white}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-border-color: rgba($white, .50);
+$navbar-light-color: $white;
+$navbar-light-active-color: $white;
+$navbar-light-hover-color: $info;
+$navbar-light-disabled-color: $white;
+$navbar-toggler-border-radius:1px;
+$navbar-toggler-focus-width:0px;
+.nav {
+  margin-bottom: 0px !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+body {
+  background-color: $light;
+  overflow-x: hidden;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+a{
+  text-decoration: none;
+  &:hover{
+    color: $info;
+  }
+}
+
+.login-options{
+  color: #6396D0;
+font-size: 0.88738rem;
+font-weight: 600;
+line-height: 131.023%; /* 1.16269rem */
+hr{
+color: #6396D0;
+border:1px solid #6396D0;
+width:100%;
+} 
+}

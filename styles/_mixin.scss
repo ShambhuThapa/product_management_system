@@ -1,0 +1,36 @@
+@import "./var";
+@mixin hovereffects{
+    background-color:$primary;
+    box-shadow: 0px 15px 20px black;
+    color: $secondary;
+    transform: translate(-7px);
+}
+
+@mixin mybtn{
+    padding:0.8rem 3.2rem;
+    background: $info;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: $white;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin content_center($x_flex_val,$y_flex_val){
+    display: flex;
+    justify-content: $x_flex_val;
+    align-items: $y_flex_val;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@mixin paragraph(){
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: -0.02625rem;
+}
