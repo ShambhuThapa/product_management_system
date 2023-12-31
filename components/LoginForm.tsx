@@ -1,18 +1,15 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
-import Header from '@/components/Header';
 import { Button, Form } from 'react-bootstrap';
-// import bgImage from '@/public/images/bg-img.png'
-import HeroSection from '@/components/HeroSection';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
-import facebookIcon from "@/public/images/icons/facebook.svg";
-import googleIcon from "@/public/images/icons/google-icon.svg";
+
 import { PageRoutes } from '@/constants';
-import Link from 'next/link';
-type Inputs = {
-  username: string;
+import FormFooterSection from './FormFooterSection';
+import { showToast } from '@/utils/toast';
+type User = {
+  email: string;
   password: string;
 };
 
@@ -23,16 +20,34 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-  } = useForm<Inputs>(
+  } = useForm<User>(
     {
       criteriaMode: "all",
     }
   );
   
-const handleLogin: SubmitHandler<Inputs> = (event: any) => {
-    console.log(event);
-    localStorage.setItem("users",JSON.stringify(event));
+  const handleLogin: SubmitHandler<User> = async (data: User) => {
+    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');  
+    if (storedUsers.length > 0) {
+      const findUser = () => {
+        return new Promise<User | undefined>((resolve) => {
+          const user = storedUsers.find(
+            (user: User) =>
+              user.email === data.email && user.password === data.password
+          );
+          resolve(user);
+        });
+      };
+      const user = await findUser();  
+      if (user) {
+        router.push('/admin');
+      } else {
+        console.log('Invalid credentials');
+        showToast("error","Invalid credentials",{position:"top-center",theme:"light"})
+      }  
+    } 
   };
+  
   return (
     <>
       <div className='bg-white col-md-12 p-2 p-md-4 '>
@@ -40,16 +55,21 @@ const handleLogin: SubmitHandler<Inputs> = (event: any) => {
         <form onSubmit={handleSubmit(handleLogin)}>
         <Form.Label htmlFor="username" className='mt-2'>Username</Form.Label>
         <Form.Control
-        type="text"
+        type="email"
         id="username"
         aria-describedby="username"
-        {...register("username", {
+        placeholder='Enter email here..'
+        {...register("email", {
             required: "Required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address"
+            }
           })}
         />
         <ErrorMessage
         errors={errors}
-        name="username"
+        name="email"
         render={({ messages }) =>
           messages &&
           Object.entries(messages).map(([type, message]) => (
@@ -59,8 +79,9 @@ const handleLogin: SubmitHandler<Inputs> = (event: any) => {
         />
         <Form.Label htmlFor="password" className='mt-2'>Password</Form.Label>
         <Form.Control
-         type="text"
+         type="password"
          id="password"
+        placeholder='password here..'
          aria-describedby="password"
          {...register("password", {
             required: "Required",
@@ -98,14 +119,7 @@ const handleLogin: SubmitHandler<Inputs> = (event: any) => {
               Continue
             </Button>
         </div>
-        <div className='d-flex justify-content-between align-items-center login-options mt-1'>
-           <hr /> <span className='options-title d-flex align-items-center flex-shrink-0'>Or Login with</span> <hr />
-        </div>
-        <div className='d-flex justify-content-center gap-2'>
-            <img src={facebookIcon.src}></img>
-            <img src={googleIcon.src}></img>
-        </div>
-        <p className='text-center mb-0 mt-1'> Dont have an account yet ? <span className='fw-bold'><Link href={PageRoutes.REGISTER}>Sign Up</Link></span></p>
+        <FormFooterSection description='Dont have an account yet ?' link={PageRoutes.REGISTER} text={'Sign Up'} />
         </form>
       </div>  
     </>
