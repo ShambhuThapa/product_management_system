@@ -40,12 +40,14 @@ const LoginPage = () => {
       };
       const user = await findUser();  
       if (user) {
+        localStorage.setItem("active_admin",JSON.stringify(user));
         router.push('/admin');
       } else {
-        console.log('Invalid credentials');
         showToast("error","Invalid credentials",{position:"top-center",theme:"light"})
       }  
-    } 
+    }else {
+      showToast("warning","Account doesn't exist.",{position:"top-center",theme:"light"})
+    }   
   };
   
   return (

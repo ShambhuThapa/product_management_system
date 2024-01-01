@@ -1,7 +1,9 @@
+
 export enum PageRoutes {
     LOGIN="/login",
     REGISTER="/register",
     HOME="/",
+    ADMIN="/admin"
 }
 
 export const dropdownItems = [
