@@ -5,9 +5,9 @@ import { Button, Form } from 'react-bootstrap';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 import FormFooterSection from './FormFooterSection';
-import { showToast } from '@/utils/toast';
+import { showToast } from '@/common/utils/toast';
 type User = {
   email: string;
   password: string;

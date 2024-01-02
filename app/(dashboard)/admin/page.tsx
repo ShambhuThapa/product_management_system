@@ -1,5 +1,5 @@
 "use client"
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 

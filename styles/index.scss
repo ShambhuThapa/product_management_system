@@ -1,5 +1,6 @@
 @import "./var";
 @import "./mixin";
+@import "./sidebar";
 
 * {
     margin: 0;
@@ -57,6 +58,10 @@ body {
 .dropdown-toggle::after {
   display: none;
 }
+.container-fluid{
+  --bs-gutter-x: 0px ;
+  --bs-gutter-y: 0px ;
+}
 a{
   text-decoration: none;
   &:hover{
@@ -77,4 +82,7 @@ width:100%;
 }
 p{
   margin-bottom: 0px !important;
+}
+.cursor-pointer{
+  cursor: pointer;
 }

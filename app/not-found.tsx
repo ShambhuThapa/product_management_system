@@ -4,7 +4,7 @@ import React from 'react'
 import errorAnimation from "@/public/lottie/error.json";
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 
 const page = () => {
   return (

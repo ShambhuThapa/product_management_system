@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
 import DropDownList from './DropDownList';
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);

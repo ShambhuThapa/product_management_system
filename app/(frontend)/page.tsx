@@ -1,6 +1,6 @@
 "use client"
 import HeroSection from '@/components/HeroSection'
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 export default function Home() {

@@ -2,7 +2,7 @@ import React from 'react'
 import facebookIcon from "@/public/images/icons/facebook.svg";
 import googleIcon from "@/public/images/icons/google-icon.svg";
 import Link from 'next/link';
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 
 interface FormFooterProps{
     description:string;

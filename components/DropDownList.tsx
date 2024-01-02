@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Image from 'next/image';
-import { PageRoutes, dropdownItems } from '@/constants';
+import { PageRoutes, dropdownItems } from '@/common/constants';
 
 function DropDownList({imageUrl,showDropdown,setShowDropdown }:any) {
   return (

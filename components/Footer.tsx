@@ -7,7 +7,7 @@ import twitter_icon from "@/public/images/icons/twitter.svg";
 import phone_icon from "@/public/images/icons/phone.svg";
 import mail_icon from "@/public/images/icons/mail.svg";
 import Link from 'next/link';
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 import { Facebook, Mail, Phone, PhoneCall } from 'react-feather';
 const Footer = () => {
   return (

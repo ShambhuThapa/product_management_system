@@ -1,9 +1,9 @@
 'use client';
 import ErrorMessageComponent from '@/components/ErrorMessageComponent';
 import FormFooterSection from '@/components/FormFooterSection';
-import { PageRoutes } from '@/constants';
+import { PageRoutes } from '@/common/constants';
 import bgImage from '@/public/images/bg-img.jpg';
-import { showToast } from '@/utils/toast';
+import { showToast } from '@/common/utils/toast';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
@@ -23,7 +23,7 @@ type User={
 
 const Page = () => {
     const {
-      register,
+register,
       handleSubmit,
       setError,
       formState: { errors },
@@ -111,9 +111,9 @@ const Page = () => {
             required: "Required",
           })}
         />
-       <ErrorMessageComponent errors={errors} name="password" />
-       <Form.Label htmlFor="confirm_password" className='mt-2'>Confirm Password</Form.Label>
-        <Form.Control
+        <ErrorMessageComponent errors={errors} name="password" />
+        <Form.Label htmlFor="confirm_password" className='mt-2'>Confirm Password</Form.Label>
+         <Form.Control
          type="password"
          id="confirm_password"
          aria-describedby="confirm_password"
@@ -121,8 +121,8 @@ const Page = () => {
             required: "Required",
           })}
         />
-       {errors['confirm_password'] && <p className='text-danger'>{errors['confirm_password']?.message}</p>}
-        <div className="d-flex flex-wrap align-items-center justify-content-between  mt-3 mb-3">
+        {errors['confirm_password'] && <p className='text-danger'>{errors['confirm_password']?.message}</p>}
+          <div className="d-flex flex-wrap align-items-center justify-content-between  mt-3 mb-3">
                     <Form.Check
                       type="checkbox"
                       id="exampleCheck1"
@@ -138,7 +138,7 @@ const Page = () => {
                       </a>
                     </span>
                   </div>
-        </div>
+          </div>
         <div className="d-grid gap-2">
             <Button type="submit" variant="primary">
               Sign Up

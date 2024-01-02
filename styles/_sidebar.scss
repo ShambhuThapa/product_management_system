@@ -1,0 +1,30 @@
+.activeNavLink{
+    color: $white;
+    background-color: $info;
+    border-left: 3px solid #ffffff;
+
+}
+.navLink{
+    color: $white;
+    &:hover{
+        color: $info;
+        stroke: $info;
+        .nav-icon{
+            stroke: $info;
+        }
+    background-color: white;
+    border-left: 3px solid #51a3ee;
+    }
+
+    // .nav-icon{
+    //     stroke: $white;
+    //     &:hover{
+    //         stroke:$info;
+    //     }
+    // }
+}
+
+.sticky-top{
+    position: sticky;
+    top:0
+}
