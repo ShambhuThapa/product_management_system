@@ -6,7 +6,7 @@ import {Edit,Trash } from "react-feather";
 import ButtonComponent from "@/components/ButtonComponent";
 import { showToast } from "@/common/utils/toast";
 import { useRouter } from "next/navigation";
-import { User } from "@/common/constants";
+import { User } from "@/common/types";
 const Page = () => {
   const [userList, setUserList] = useState([]);
   const router = useRouter();

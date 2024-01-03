@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.sidebarDiv {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  width: 180px;
+}
+
 .activeNavLink {
   color: #ffffff;
   background-color: #6396D0;

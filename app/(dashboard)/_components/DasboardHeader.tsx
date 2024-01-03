@@ -2,7 +2,8 @@
 import { PageRoutes } from '@/common/constants';
 import { useRouter } from 'next/navigation';
 import React from 'react'
-import { User } from 'react-feather'
+import { Badge, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { LogOut, User } from 'react-feather'
 
 
 const DasboardHeader = () => {
@@ -16,8 +17,20 @@ const DasboardHeader = () => {
 } 
  
   return (
-    <div className='bg-info cursor-pointer text-white d-flex justify-content-end p-2 sticky-top' >
-      <div className='col-sm-1' onClick={()=>handleLogout()}><User/>User</div>
+    <div className='bg-info cursor-pointer text-white d-flex justify-content-end align-items-center sticky-top' >
+      <div className='col-sm-2 d-flex justify-content-end  align-items-center m-1 gap-1' ><Badge><User/>User</Badge>
+      <OverlayTrigger
+          placement="left"
+          delay={{ show: 250, hide: 400 }}
+          overlay={
+            <Tooltip id="button-tooltip" className="position-fixed">
+              Logout
+            </Tooltip>
+          }
+        >
+         <LogOut onClick={()=>handleLogout()}/>
+      </OverlayTrigger>   
+         </div>
     </div>
   )
 }

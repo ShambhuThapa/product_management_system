@@ -1,24 +1,24 @@
 "use client"
 import React from 'react'
 import SidebarItem from './SidebarItem'
-import { Camera, Compass, User } from 'react-feather';
+import { Home,ShoppingCart, Users } from 'react-feather';
 import logo from '@/public/images/logo/logo.svg';
 import Image from 'next/image';
 
 const dashboardRoutes=[{
-    icon:Camera,
+    icon:Home,
     label:"Dashboard",
     href:"/admin"},
     {
-    icon:Compass,
-    label:"Users",
-    href:"/admin/users"
-    },
-    {
-    icon:User,
+    icon:ShoppingCart,
     label:"Products",
     href:"/admin/products"
     },
+    {
+      icon:Users,
+      label:"Users",
+      href:"/admin/users"
+      },
 ]
 const Sidebar = () => {
     const routes=dashboardRoutes;
@@ -38,7 +38,7 @@ const Sidebar = () => {
         <Image src={logo} alt='logo' priority={true}/>
     </div>
     {routes.map((route)=>{
-     return(
+      return(
       <SidebarItem key={route.href} icon={route.icon} label={route.label} href={route.href}>
       </SidebarItem>
      )

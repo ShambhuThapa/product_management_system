@@ -1,3 +1,12 @@
+.sidebarDiv{
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    width: 180px,
+}
 .activeNavLink{
     color: $white;
     background-color: $info;
@@ -15,13 +24,6 @@
     background-color: white;
     border-left: 3px solid #51a3ee;
     }
-
-    // .nav-icon{
-    //     stroke: $white;
-    //     &:hover{
-    //         stroke:$info;
-    //     }
-    // }
 }
 
 .sticky-top{

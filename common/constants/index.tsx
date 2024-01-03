@@ -11,9 +11,3 @@ export const dropdownItems = [
     { eventKey: 'register', label: 'Register' , route:PageRoutes.REGISTER},
   ];
 
-export  type User={
-    id:number;
-    email:string;
-    full_name:string;
-    password:string;
-   }
