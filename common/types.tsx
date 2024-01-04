@@ -7,14 +7,14 @@ export  type User={
 
 export type product = {
     id?:                 number;
-    title?:              string;
-    description?:        string;
-    price?:              number;
-    discountPercentage?: number;
-    rating?:             number;
-    stock?:              number;
-    brand?:              string;
-    category?:           string;
-    thumbnail?:          string;
+    title:              string;
+    description:        string;
+    price:              number;
+    discountPercentage: number;
+    rating:             number;
+    stock:              number;
+    brand:              string;
+    category:           string;
+    thumbnail:          any;
     images?:             string[];
 }

@@ -69,7 +69,7 @@ const Page = () => {
     <div className="d-flex align-items-center justify-content-between">
       <HeadingTitle title="Product List" />
 
-    <ButtonComponent Icon={<PlusCircle size="20"/>} tooltip="Add product" type="button" label='Add Product' href='/' />
+    <ButtonComponent Icon={<PlusCircle size="20"/>} tooltip="Add product" type="button" label='Add Product' href='products/new' />
     </div>
     <Row className="d-flex justify-content-between align-items-center">
         <Col className="d-flex align-items-center" xs={6} md={6} lg={6} xl={6}>

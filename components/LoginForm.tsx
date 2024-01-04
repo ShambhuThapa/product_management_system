@@ -8,6 +8,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import { PageRoutes } from '@/common/constants';
 import FormFooterSection from './FormFooterSection';
 import { showToast } from '@/common/utils/toast';
+import ErrorMessageComponent from './ErrorMessageComponent';
 type User = {
   email: string;
   password: string;
@@ -69,16 +70,7 @@ const LoginPage = () => {
             }
           })}
         />
-        <ErrorMessage
-        errors={errors}
-        name="email"
-        render={({ messages }) =>
-          messages &&
-          Object.entries(messages).map(([type, message]) => (
-            <p key={type} className='text-danger'>*{message}</p>
-          ))
-        }
-        />
+        <ErrorMessageComponent errors={errors} name="email" />
         <Form.Label htmlFor="password" className='mt-2'>Password</Form.Label>
         <Form.Control
          type="password"
@@ -89,15 +81,7 @@ const LoginPage = () => {
             required: "Required",
           })}
         />
-        <ErrorMessage
-        errors={errors}
-        name="password"
-        render={({ messages }) =>
-          messages &&
-          Object.entries(messages).map(([type, message]) => (
-            <p key={type} className='text-danger'>*{message}</p>
-          ))
-        }/>
+        <ErrorMessageComponent errors={errors} name="password" />
         <div className="d-flex flex-wrap align-items-center justify-content-between  mt-3 mb-3">
                     <Form.Check
                       type="checkbox"

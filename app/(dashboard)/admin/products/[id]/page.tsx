@@ -29,18 +29,15 @@ const Page = () => {
       category,
       thumbnail,
       images
-  } = productDetail ||{};
-  console.log(images);
+      } = productDetail ||{};
   return (
       <div className="container">
-  
         <div className="row">
           <div className="col-md-6 mb-1">
             <img src={thumbnail} className="img-fluid" alt=""/>
           </div>
           <div className="col-md-6 mb-3">
             <div className="p-4">
-  
               <div className="mb-3">
                 <a href="">
                 <Badge pill bg="primary" className='me-1'>{category}</Badge>
@@ -55,20 +52,16 @@ const Page = () => {
                 <Badge pill bg="info" className='me-1'>Discount:{rating}</Badge>
                 </a>
               </div>
-  
               <p className="lead">
                 {title}
                 <br/>              
                 <span>NRs.{price}</span>
               </p>
-  
               <h5 className="fw-bold">Description</h5>
-  
               <p>{description}</p>
             </div>
           </div>
         </div>
-
         <hr/>  
         <div className="row d-flex justify-content-center">        
           <div className="col-md-6 text-center">
@@ -76,22 +69,15 @@ const Page = () => {
             <p>
               {description}
             </p>
-  
           </div>
-        
-  
         </div>
-
         <div className="row wow fadeIn mt-2">
-  
         {images?.map((image, index) => (
-  <div key={index} className="col-lg-4 col-md-12 mb-4">
-    <img src={image} className="img-fluid" alt={`product_image_${index}`} />
-  </div>
-))}
-
+        <div key={index} className="col-lg-4 col-md-12 mb-4">
+          <img src={image} className="img-fluid" alt={`product_image_${index}`} />
         </div>
-  
+))}
+        </div>
       </div>
   )
 }
